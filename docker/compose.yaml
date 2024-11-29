@@ -1,0 +1,23 @@
+name: php-demo
+services:
+  app:
+    container_name: php
+    restart: always
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    working_dir: /app
+    volumes:
+      - ../src:/app
+  nginx:
+    image: nginx:1.19-alpine
+    container_name: nginx
+    restart: always
+    volumes:
+      - ../src:/app
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - 8000:80
+    
+    
+    
