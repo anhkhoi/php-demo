@@ -1,1 +1,1 @@
-{"version":1,"defects":{"Tests\\Unit\\ProductControllerTest::testProductList":5,"Warning":6},"times":{"Tests\\Unit\\ProductControllerTest::testProductList":0.002,"Tests\\Unit\\SimpleTest::testTrueIstrue":0,"Warning":0.006,"Tests\\Unit\\ProductControllerTest::productList":0.004}}
+{"version":1,"defects":{"Tests\\Unit\\ProductControllerTest::testProductList":5,"Warning":6},"times":{"Tests\\Unit\\ProductControllerTest::testProductList":0.001,"Tests\\Unit\\SimpleTest::testTrueIstrue":0.001,"Warning":0.006,"Tests\\Unit\\ProductControllerTest::productList":0.004}}
