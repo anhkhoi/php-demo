@@ -5,10 +5,11 @@ FROM php:7.4.0-fpm
 
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y git curl zip vim unzip libicu-dev libxml2-dev
+RUN apt-get update && apt-get install -y git curl zip vim unzip libicu-dev libxml2-dev libgmp-dev
 
 RUN docker-php-ext-configure intl
 RUN docker-php-ext-install intl pdo pdo_mysql intl soap
+RUN docker-php-ext-install -j$(nproc) gmp
 
 # RUN pecl install xdebug \
 # 	&& docker-php-ext-enable xdebug

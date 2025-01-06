@@ -8,6 +8,43 @@ echo PHP_VERSION . '<br/>';
 
 error_reporting(E_ALL);
 
+$url_headers = [
+    'Content-Length' => [],
+    'Content-Type' => 'kkk',
+];
+
+if (isset($url_headers['Content-Length'])) {
+    $size = intval($url_headers['Content-Length']);
+    var_dump($size);
+}
+
+if (isset($url_headers['Content-Type'])) {
+    $type = strtolower($url_headers['Content-Type']);
+    var_dump($type);
+}
+
+
+
+exit;
+$xmlString = '<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><element>value</element></soap:Body></soap:Envelope>';
+
+$response = simplexml_load_string($xmlString);
+// $response = simplexml_load_string($xmlString, 'SimpleXMLElement', 0, 'soap');
+
+// $response->registerXPathNamespace('soap', 'http://schemas.xmlsoap.org/soap/envelope/');
+$response_body = $response->xpath('//soap:Body/element')[0];
+echo '<pre>';
+print_r($response_body);
+echo '</pre>';
+echo '---';
+// echo '<pre>';
+// print_r($response_body->gettransactionResponse);
+// echo '</pre>';
+// echo '<pre>';
+// print_r($response->Body);
+// echo '</pre>';
+
+exit;
 $wsdl = 'https://membership-api-uat.big4.com.au/MembershipService.svc?singleWsdl'; // forbidden
 $wsdl = 'kkk'; // empty
 // $wsdl = 'http://apiv3-membership.big4.com.au/MembershipService.svc?wsdl'; // valid
